@@ -1,0 +1,11 @@
+<h1>User page</h1>
+
+<p>
+  <div class="display">
+    <ol>
+      <% @users.each do |user| %>
+      <li><a href="/users/<%= user.id %>"><%= user.user %></a></li>
+      <% end %>
+    </ol>
+  </div>
+</p>

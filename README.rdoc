@@ -1,0 +1,14 @@
+
+
+
+
+
+Used in debugging:
+https://github.com/thoughtbot/shoulda-matchers/issues/371
+ -- validate_uniqueness_of works by making a new record and comparing it with an existing one in the database. If there is not a record already in the database, it will create one. Unfortunately when auto-creating a record, it is not smart enough to set attributes on it that will make it successfully save. Hence, in this case we suggest you pre-create a record before you call validate_uniqueness_of.
+
+ https://github.com/thoughtbot/factory_girl/wiki/Usage
+ -- How to make a factory girl with pasword confirmation
+
+ http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/
+ --set up db cleaner
