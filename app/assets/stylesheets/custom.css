@@ -1,0 +1,72 @@
+/* COLORS
+
+
+font teal = #037E8C
+font tan = #F3E9D0
+font orange = #E74C30
+wrapper tan = #BEB7A7
+
+*/
+
+html, body, div, img, span, h1, h2, h3, h4, p, ol, ul, li {
+  margin:0;
+  padding:0;
+  border:0;
+  text-align:left;
+  font-weight:normal;
+  vertical-align:baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style-position: inside;
+}
+
+body {
+  background-image: url(http://subtlepatterns.com/patterns/old_wall.png);
+  font-family: 'Special Elite', cursive;
+}
+
+
+#wrapper {
+  margin:65px auto 20px auto;
+  padding:20px;
+  width:800px;
+  border-radius: 20px;
+  background-color: #BEB7A7;
+}
+
+.clear {clear:both;}
+
+/* Headers */
+h1 {
+  margin: 5px 0 15px 0;
+  color: #037E8C;
+}
+
+
+
+
+/* Bootstrap Overrides */
+.naviHeader {
+  background-color: #34373F;
+  color: #F3E9D0;
+}
+
+.naviHeader a {
+  color: #F3E9D0;
+}
+
+.naviHeader a:hover {
+  background-color: #34373F !important;
+  color: #E74C30;
+}
+
+.col-md-2 {
+  width:50%;
+}
