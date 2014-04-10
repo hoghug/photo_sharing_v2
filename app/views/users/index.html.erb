@@ -1,13 +1,35 @@
-<h1>User page</h1>
+<h1>Blink! Photosharing</h1>
 
-<div id="all-photos">
-  <% @uploads.each do |upload| %>
+<% if @favorites.length > 0 %>
+<div id="recent-favorites">
+  <h2>Recent Favorites</h2>
+
+  <% @favorites.each do |f| %>
     <div class="photo">
-      <%= image_tag upload.photo.url(:thumb) %>
-      <a class="glyphicon glyphicon-heart"
-          data-method="post"
-          href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites"></a>
+      <%= image_tag f.upload.photo.url(:thumb) %>
     </div>
   <% end %>
 </div>
+<div class="clear"></div>
+<% end %>
+
+<div id="all-photos">
+  <h2>All Photos</h2>
+  <% @uploads.each do |upload| %>
+    <div class="photo">
+      <%= image_tag upload.photo.url(:thumb) %>
+
+      <% if !current_user.nil? %>
+        <% if Favorite.exists?(user_id: current_user.id, upload_id: upload.id) %>
+          <a class="glyphicon glyphicon-heart favorited" data-method="delete"
+            href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites/<%= Favorite.find_by(user_id: current_user.id, upload_id: upload.id).id %>"></a>
+        <% else %>
+          <a class="glyphicon glyphicon-heart" data-method="post"
+            href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites"></a>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 

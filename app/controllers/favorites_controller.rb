@@ -4,13 +4,17 @@ class FavoritesController < ApplicationController
     @user = User.find(params[:user_id])
     @upload = Upload.find(params[:upload_id])
 
-    @favorite = Favorite.new({:user_id => @user.id, :upload_id => @upload.id})
+    # @upload.favorites << @user
+    @favorite = Favorite.create({:user_id => @user.id, :upload_id => @upload.id})
 
     redirect_to :root
   end
 
   def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
 
+    redirect_to :root
   end
 
 end

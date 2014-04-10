@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @uploads = Upload.all
+    @favorites = Favorite.find(:all, :select => 'DISTINCT upload_id')
   end
 
   def new

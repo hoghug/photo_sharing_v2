@@ -49,13 +49,19 @@ h1 {
   color: #037E8C;
 }
 
+h2 {
+  margin: 10px 0 5px 0;
+}
+
 #user-profile {
   width: 300px;
+  float: left;
   text-align: center;
 }
 
 #user-profile h1 {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 #user-actions li {
@@ -63,14 +69,26 @@ h1 {
   display: inline-block;
 }
 
+#user-photos {
+  float:left;
+}
 
 
 /* Main Photo Listing */
-#all-photos .photo {
-  position: relative;
+#recent-favorites, #all-photos {
+  width:100%;
+
 }
 
-#all-photos .photo .glyphicon-heart {
+
+.photo {
+  float: left;
+  margin:2px;
+  position: relative;
+  height: 50%;
+}
+
+.photo .glyphicon-heart {
   display:none;
   position: absolute;
   top: 5px;
@@ -78,6 +96,11 @@ h1 {
   color:white;
   text-shadow: 1px 1px 1px black;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.photo .glyphicon-heart.favorited {
+  color: #CA293E;
 }
 
 /* Bootstrap Overrides */

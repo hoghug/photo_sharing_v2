@@ -11,13 +11,21 @@
 
 </div>
 
-
 <div id="user-photos">
-  <% @uploads.each do |upload| %>
-    <%= image_tag upload.photo.url %>
-  <% end %>
+  <div id="user-photos">
+    <h2>My Photos</h2>
+    <% @uploads.each do |upload| %>
+      <%= image_tag upload.photo.url(:thumb) %>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+  <div id="favorite-photos">
+    <h2>My Favorites</h2>
+    <% @user.favorites.each do |favorite| %>
+      <%= image_tag favorite.upload.photo.url(:thumb) %>
+    <% end %>
+  </div>
 </div>
-
 
 
 <div class="modal fade" id="newPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
