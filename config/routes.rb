@@ -6,6 +6,7 @@ PhotoShare::Application.routes.draw do
   resources :users do
     resources :uploads do
       resources :favorites
+      resources :tags
     end
   end
 

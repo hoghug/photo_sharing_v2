@@ -1,12 +1,6 @@
 <h1>Log In</h1>
 
 <%= form_tag sessions_path do %>
-
-<!--   <div class="field">
-    <%= label_tag :user %><br />
-    <%= text_field_tag :user, params[:user] %>
-  </div> -->
-
   <div class="form-group">
     <%= text_field_tag :email, params[:email], :placeholder => 'Email' %>
   </div>

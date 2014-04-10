@@ -1,0 +1,13 @@
+<h1>Blink!</h1>
+
+<div class="photo-display">
+
+<%= image_tag @upload.photo.url(:medium) %>
+
+</div>
+
+<div id="add-tags">
+  <% @users.each do |user| %>
+    <%= link_to user.name, user_upload_tags_path(@user, @upload), :method => 'post' %>
+  <% end %>
+</div>

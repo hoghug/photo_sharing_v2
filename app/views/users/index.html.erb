@@ -4,9 +4,9 @@
 <div id="recent-favorites">
   <h2>Recent Favorites</h2>
 
-  <% @favorites.each do |f| %>
+  <% @favorites.each do |favorite| %>
     <div class="photo">
-      <%= image_tag f.upload.photo.url(:thumb) %>
+      <%= image_tag favorite.upload.photo.url(:thumb) %>
     </div>
   <% end %>
 </div>
@@ -25,7 +25,7 @@
             href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites/<%= Favorite.find_by(user_id: current_user.id, upload_id: upload.id).id %>"></a>
         <% else %>
           <a class="glyphicon glyphicon-heart" data-method="post"
-            href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites"></a>
+            href="<%= user_upload_favorites_path(current_user, upload) %>"></a>
         <% end %>
       <% end %>
     </div>

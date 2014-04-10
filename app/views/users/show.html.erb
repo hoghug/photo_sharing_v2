@@ -1,6 +1,6 @@
 <div id="user-profile">
   <%= image_tag @user.avatar.url(:medium) %>
-  <h1><%=@user.user%></h1>
+  <h1><%=@user.name%></h1>
 
   <% if current_user.id == @user.id %>
   <ul id="user-actions">
@@ -15,7 +15,7 @@
   <div id="user-photos">
     <h2>My Photos</h2>
     <% @uploads.each do |upload| %>
-      <%= image_tag upload.photo.url(:thumb) %>
+      <a href="<%= user_upload_path(@user, upload) %>"><%= image_tag upload.photo.url(:thumb) %></a>
     <% end %>
   </div>
   <div class="clear"></div>
