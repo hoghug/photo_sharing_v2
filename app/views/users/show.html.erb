@@ -1,10 +1,5 @@
-<h1><%=@user.user%></h1>
+<div class="col-md-2">
+  <%= image_tag @user.avatar.url(:medium) %>
+  <h1><%=@user.user%></h1>
 
-  <h4> Upload an Image: </h4>
-    <%= form_tag upload_path do %>
-    <% end %>
-
-  <h4> Current Avatar: </h4>
-    <%= image_tag @user.avatar.url %>
-    <%= image_tag @user.avatar.url(:medium) %>
-    <%= image_tag @user.avatar.url(:thumb) %>
+</div>
