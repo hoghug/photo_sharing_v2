@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
 
   has_many :uploads
   has_many :favorites
+  has_many :uploads, :through => :favorites
 
 end

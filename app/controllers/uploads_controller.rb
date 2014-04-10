@@ -16,6 +16,7 @@ class UploadsController < ApplicationController
     @user = User.find(params[:user_id])
     @upload = Upload.find(params[:id])
     @users = User.all
+    @tags = Tag.where(upload_id: @upload.id)
   end
 
 

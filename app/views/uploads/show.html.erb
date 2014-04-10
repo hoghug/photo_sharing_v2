@@ -1,4 +1,4 @@
-<h1>Blink!</h1>
+  <h1>Blink!</h1>
 
 <div class="photo-display">
 
@@ -7,7 +7,18 @@
 </div>
 
 <div id="add-tags">
+  <h3>Tag this photo:</h3>
   <% @users.each do |user| %>
-    <%= link_to user.name, user_upload_tags_path(@user, @upload), :method => 'post' %>
+    <span class="glyphicon  glyphicon-tag"></span>
+    <%= link_to user.name, user_upload_tags_path(user, @upload), :method => 'post' %>
+  <% end %>
+</div>
+
+
+<div id="user-tags">
+
+  <% @tags.each do |tag| %>
+    <span class="glyphicon glyphicon-remove"></span>
+    <%= link_to tag.user.name, user_upload_tag_path(tag.user, tag.upload, tag), :method => 'delete' %>
   <% end %>
 </div>
