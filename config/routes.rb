@@ -3,7 +3,10 @@ PhotoShare::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'users#destroy', as: 'logout'
 
-  resources :users
+  resources :users do
+    resources :uploads
+  end
+
   resources :sessions
 
   root to: 'users#index'

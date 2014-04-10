@@ -1,5 +1,41 @@
-<div class="col-md-2">
+<div id="user-profile">
   <%= image_tag @user.avatar.url(:medium) %>
   <h1><%=@user.user%></h1>
 
+  <% if current_user.id == @user.id %>
+  <ul id="user-actions">
+    <li>Edit User <span class="glyphicon glyphicon-pencil"></span> </li>
+    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newPhoto">Add Photo <span class="glyphicon glyphicon-camera"></span></a></li>
+  </ul>
+  <% end %>
+
 </div>
+
+
+<div id="user-photos">
+  <% @uploads.each do |upload| %>
+    <%= image_tag upload.photo.url %>
+    <%= breaker %>
+  <% end %>
+</div>
+
+
+
+<div class="modal fade" id="newPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">New Photo Upload</h4>
+        </div>
+        <div class="modal-body">
+          <%= form_for [@user, @upload], :html => { :multipart => true } do |f| %>
+            <div class="form-group">
+              <%= f.file_field :photo %>
+            </div>
+            <%= f.submit(:class => "btn btn-primary") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

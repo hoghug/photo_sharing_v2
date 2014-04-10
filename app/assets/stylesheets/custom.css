@@ -49,7 +49,19 @@ h1 {
   color: #037E8C;
 }
 
+#user-profile {
+  width: 300px;
+  text-align: center;
+}
 
+#user-profile h1 {
+  text-align: center;
+}
+
+#user-actions li {
+  list-style-type: none;
+  display: inline-block;
+}
 
 
 /* Bootstrap Overrides */
