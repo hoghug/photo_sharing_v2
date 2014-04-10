@@ -64,6 +64,22 @@ h1 {
 }
 
 
+
+/* Main Photo Listing */
+#all-photos .photo {
+  position: relative;
+}
+
+#all-photos .photo .glyphicon-heart {
+  display:none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color:white;
+  text-shadow: 1px 1px 1px black;
+  cursor: pointer;
+}
+
 /* Bootstrap Overrides */
 .naviHeader {
   background-color: #34373F;

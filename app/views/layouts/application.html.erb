@@ -47,5 +47,23 @@
 
   </div>
 
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      $('#all-photos .photo').on({
+        mouseenter: function() {
+          $(this).find('.glyphicon-heart').fadeToggle()
+        },
+        mouseleave: function() {
+          $(this).find('.glyphicon-heart').fadeToggle()
+        }
+      });
+
+    })
+
+  </script>
+
+
 </body>
 </html>

@@ -4,7 +4,9 @@ PhotoShare::Application.routes.draw do
   get 'logout', to: 'users#destroy', as: 'logout'
 
   resources :users do
-    resources :uploads
+    resources :uploads do
+      resources :favorites
+    end
   end
 
   resources :sessions

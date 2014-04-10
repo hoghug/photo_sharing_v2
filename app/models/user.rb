@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   has_many :uploads
-
+  has_many :favorites
 
 end

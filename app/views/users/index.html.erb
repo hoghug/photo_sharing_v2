@@ -1,11 +1,13 @@
 <h1>User page</h1>
 
-<p>
-  <div class="display">
-    <ol>
-      <% @users.each do |user| %>
-      <li><a href="/users/<%= user.id %>"><%= user.user %></a></li>
-      <% end %>
-    </ol>
-  </div>
-</p>
+<div id="all-photos">
+  <% @uploads.each do |upload| %>
+    <div class="photo">
+      <%= image_tag upload.photo.url(:thumb) %>
+      <a class="glyphicon glyphicon-heart"
+          data-method="post"
+          href="/users/<%= current_user.id %>/uploads/<%= upload.id %>/favorites"></a>
+    </div>
+  <% end %>
+</div>
+
