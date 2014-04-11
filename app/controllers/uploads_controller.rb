@@ -15,8 +15,17 @@ class UploadsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @upload = Upload.find(params[:id])
-    @users = User.all
+    user_ids = User.pluck(:id)
     @tags = Tag.where(upload_id: @upload.id)
+
+    @tags.each do |tag|
+      user_ids.delete(tag.user_id)
+    end
+
+    @users = []
+    user_ids.each { |ui| @users << User.find(ui) }
+
+
   end
 
 

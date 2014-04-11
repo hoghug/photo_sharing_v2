@@ -8,7 +8,7 @@
 
 <div id="add-tags">
   <h3>Tag this photo:</h3>
-  <% @users.each do |user| %>
+  <% @users.uniq.each do |user| %>
     <span class="glyphicon  glyphicon-tag"></span>
     <%= link_to user.name, user_upload_tags_path(user, @upload), :method => 'post' %>
   <% end %>

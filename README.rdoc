@@ -1,4 +1,19 @@
+Project:
 
+Photo sharing app
+Let's make an app that lets users upload their photos to share with the world.
+
+Start off by letting people create accounts, following along with the authentication Railscast.
+
+Then, let them upload photos.
+
+Next, allow them to tag other users in photos. To keep this simple, just display a list of all the users in a drop-down menu when you add a tag to a photo.
+
+Create a profile page for a user (i.e., users#show) that lists out all of the photos they're tagged in.
+
+Now, let users "favorite" photos. On their profile page, include a list of all the photos they've favorited.
+
+Finally, add a recommendation engine to users' profile page: based on the photos they've favorited and been tagged in, suggest other users for them to check out.
 
 
 
@@ -8,7 +23,7 @@ https://github.com/thoughtbot/shoulda-matchers/issues/371
  -- validate_uniqueness_of works by making a new record and comparing it with an existing one in the database. If there is not a record already in the database, it will create one. Unfortunately when auto-creating a record, it is not smart enough to set attributes on it that will make it successfully save. Hence, in this case we suggest you pre-create a record before you call validate_uniqueness_of.
 
  https://github.com/thoughtbot/factory_girl/wiki/Usage
- -- How to make a factory girl with pasword confirmation
+ -- How to make a factory girl with password confirmation
 
  http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/
  --set up db cleaner
